@@ -23,6 +23,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.uber.sdk.android.rides.samples">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/uber_sample_ic_launcher"
@@ -36,7 +38,22 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="samples.rides.android.sdk.uber.com"
+                    android:pathPrefix="/sample"
+                    android:scheme="https" />
+            </intent-filter>
+
+
         </activity>
+
 
         <meta-data
             android:name="UberClientId"
@@ -45,6 +62,10 @@
         <meta-data
             android:name="UberClientSecret"
             android:value="@string/uber_client_secret" />
+
+        <meta-data
+            android:name="UberRedirectURI"
+            android:value="https://samples.rides.android.sdk.uber.com/sample/" />
 
     </application>
 

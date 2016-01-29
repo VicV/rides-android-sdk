@@ -32,8 +32,7 @@
     </declare-styleable>
 
     <declare-styleable name="SignInButton">
-        <attr name="redirect_uri" format="string" />
-        <attr name="style" format="enum">
+        <attr name="signin_style" format="enum">
             <enum name="black" value="0" />
             <enum name="white" value="1" />
             <enum name="black_badge" value="2" />

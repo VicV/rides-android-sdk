@@ -27,6 +27,8 @@ import android.os.Bundle;
 
 import com.uber.sdk.android.rides.RideParameters;
 import com.uber.sdk.android.rides.RequestButton;
+import com.uber.sdk.android.rides.SignInButton;
+import com.uber.sdk.android.rides.utils.ManifestUtils;
 
 /**
  * Activity that demonstrates how to use a {@link RequestButton}.
@@ -48,12 +50,12 @@ public class SampleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sample);
 
-        String clientId = getString(R.string.client_id);
+        String clientId = ManifestUtils.getManifestData(this,"UberClientId");
         if (clientId.equals("insert_your_client_id_here")) {
             throw new IllegalArgumentException("Please enter your client ID in client_id in res/values/strings.xml");
         }
 
-        RequestButton uberButtonBlack = (RequestButton) findViewById(R.id.uber_button_black);
+        SignInButton uberButtonBlack = (SignInButton) findViewById(R.id.uber_button_black);
         RequestButton uberButtonWhite = (RequestButton) findViewById(R.id.uber_button_white);
 
         RideParameters rideParameters = new RideParameters.Builder()
@@ -62,7 +64,7 @@ public class SampleActivity extends AppCompatActivity {
                 .setDropoffLocation(DROPOFF_LAT, DROPOFF_LONG, DROPOFF_NICK, DROPOFF_ADDR)
                 .build();
 
-        uberButtonBlack.setRideParameters(rideParameters);
+//        uberButtonBlack.setRideParameters(rideParameters);
         uberButtonWhite.setRideParameters(rideParameters);
     }
 }
