@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
     Copyright (c) 2015 Uber Technologies, Inc.
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -22,13 +21,23 @@
 -->
 
 <resources>
-    <attr name="uberButtonStyle" format="reference"/>
+    <attr name="uberButtonStyle" format="reference" />
 
     <declare-styleable name="RequestButton">
-        <attr name="client_id" format="string"/>
+        <attr name="client_id" format="string" />
         <attr name="style" format="enum">
-            <enum name="black" value="0"/>
-            <enum name="white" value="1"/>
+            <enum name="black" value="0" />
+            <enum name="white" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="SignInButton">
+        <attr name="redirect_uri" format="string" />
+        <attr name="style" format="enum">
+            <enum name="black" value="0" />
+            <enum name="white" value="1" />
+            <enum name="black_badge" value="2" />
+            <enum name="white_badge" value="3" />
         </attr>
     </declare-styleable>
 </resources>

@@ -116,7 +116,7 @@ public class RequestButton extends UberButton {
     private enum Style {
         /**
          * Black background, white text. This is the default.
-         */
+                */
         BLACK(0, R.style.UberButton_RideRequest),
 
         /**
@@ -144,7 +144,6 @@ public class RequestButton extends UberButton {
                     return style;
                 }
             }
-
             return DEFAULT;
         }
 

@@ -23,5 +23,4 @@
 
 <resources>
     <string name="app_name">Uber SDK</string>
-    <string name="client_id">insert_your_client_id_here</string>
 </resources>

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
     Copyright (c) 2015 Uber Technologies, Inc.
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -22,22 +21,31 @@
 -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.uber.sdk.android.rides.samples" >
+    package="com.uber.sdk.android.rides.samples">
 
     <application
         android:allowBackup="true"
+        android:icon="@drawable/uber_sample_ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/Theme.AppCompat"
-        android:icon="@drawable/uber_sample_ic_launcher">
+        android:theme="@style/Theme.AppCompat">
         <activity
             android:name=".SampleActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="UberClientId"
+            android:value="@string/uber_client_id" />
+
+        <meta-data
+            android:name="UberClientSecret"
+            android:value="@string/uber_client_secret" />
+
     </application>
 
 </manifest>
