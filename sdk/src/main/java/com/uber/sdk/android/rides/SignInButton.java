@@ -106,6 +106,7 @@ public class SignInButton extends UberButton {
                                 @Override
                                 public void onResponse(Response<AuthInfo> response) {
                                     loginDialog.hide();
+                                    Uber.getInstance().setAccessToken(response.body().getTokenType() + " " + response.body().getAccessToken());
                                 }
 
                                 @Override
@@ -128,8 +129,6 @@ public class SignInButton extends UberButton {
         wrapper.addView(keyboardHelper, LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         alert.setView(wrapper);
         loginDialog = alert.show();
-
-
     }
 
     private interface UberAuthInterface {

@@ -28,6 +28,7 @@ import android.os.Bundle;
 import com.uber.sdk.android.rides.RideParameters;
 import com.uber.sdk.android.rides.RequestButton;
 import com.uber.sdk.android.rides.SignInButton;
+import com.uber.sdk.android.rides.Uber;
 import com.uber.sdk.android.rides.utils.ManifestUtils;
 
 /**
@@ -64,7 +65,11 @@ public class SampleActivity extends AppCompatActivity {
                 .setDropoffLocation(DROPOFF_LAT, DROPOFF_LONG, DROPOFF_NICK, DROPOFF_ADDR)
                 .build();
 
-//        uberButtonBlack.setRideParameters(rideParameters);
         uberButtonWhite.setRideParameters(rideParameters);
+
+
+        Uber.getInstance().getRideHistory(0,5);
+
+
     }
 }
