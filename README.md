@@ -60,7 +60,8 @@ In the `pom.xml` file:
 
 Add the following information to your AndroidManifest.xml
 
-```       <meta-data
+```      
+<meta-data
             android:name="UberClientId"
             android:value="@string/uber_client_id" />
 
