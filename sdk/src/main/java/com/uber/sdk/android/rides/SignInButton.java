@@ -106,7 +106,7 @@ public class SignInButton extends UberButton {
                                 @Override
                                 public void onResponse(Response<AuthInfo> response) {
                                     loginDialog.hide();
-                                    Uber.getInstance().setAccessToken(response.body().getTokenType() + " " + response.body().getAccessToken());
+                                    //TODO: YOU NOW HAVE TOKENS AND THINGS. SEND TO THE JAVA SDK AND HAVE FUN. 
                                 }
 
                                 @Override

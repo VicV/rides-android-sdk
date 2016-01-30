@@ -22,13 +22,12 @@
 
 package com.uber.sdk.android.rides.samples;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
-import com.uber.sdk.android.rides.RideParameters;
 import com.uber.sdk.android.rides.RequestButton;
+import com.uber.sdk.android.rides.RideParameters;
 import com.uber.sdk.android.rides.SignInButton;
-import com.uber.sdk.android.rides.Uber;
 import com.uber.sdk.android.rides.utils.ManifestUtils;
 
 /**
@@ -51,7 +50,7 @@ public class SampleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sample);
 
-        String clientId = ManifestUtils.getManifestData(this,"UberClientId");
+        String clientId = ManifestUtils.getManifestData(this, "UberClientId");
         if (clientId.equals("insert_your_client_id_here")) {
             throw new IllegalArgumentException("Please enter your client ID in client_id in res/values/strings.xml");
         }
@@ -66,9 +65,9 @@ public class SampleActivity extends AppCompatActivity {
                 .build();
 
         uberButtonWhite.setRideParameters(rideParameters);
+//---------------------------------------------------------
 
-
-        Uber.getInstance().getRideHistory(0,5);
+        Uber.getInstance().getRideHistory(0, 3);
 
 
     }
