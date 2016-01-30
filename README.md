@@ -1,4 +1,4 @@
-# Uber Rides Android SDK (beta) WITH login for credentials.
+# Uber Rides Android SDK (beta) (Different Approach).
 
 Unofficial Android SDK (beta) to support Uber’s deeplinks.
 
