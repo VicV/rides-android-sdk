@@ -13,6 +13,7 @@ import android.webkit.WebViewClient;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
+import com.google.api.client.auth.oauth2.Credential;
 import com.uber.sdk.android.rides.utils.ManifestUtils;
 
 import retrofit2.Call;
@@ -106,7 +107,8 @@ public class SignInButton extends UberButton {
                                 @Override
                                 public void onResponse(Response<AuthInfo> response) {
                                     loginDialog.hide();
-                                    //TODO: YOU NOW HAVE TOKENS AND THINGS. SEND TO THE JAVA SDK AND HAVE FUN. 
+                                    //TODO: YOU NOW HAVE TOKENS AND THINGS. SEND TO THE JAVA SDK AND HAVE FUN.
+                                    Credential credential =
                                 }
 
                                 @Override

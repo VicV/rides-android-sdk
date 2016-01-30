@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="uber_client_id">srDIX_vTqlcYtyNGYMdZ4EV7xVI1O2Qi</string>
+    <string name="uber_client_id">YOUR ID HERE</string>
 
-    <string name="uber_client_secret">QoxVn56II9ncHh5TlRFH6NabbK3ALIbDmyE-gswk</string>
+    <string name="uber_client_secret">YOUR SECRET HERE</string>
 </resources>

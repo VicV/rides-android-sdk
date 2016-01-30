@@ -29,6 +29,8 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
+import com.uber.sdk.android.rides.utils.ManifestUtils;
+
 /**
  * An Uber styled button to request rides with specific {@link RideParameters}. Default {@link RideParameters} is
  * set to a pickup of the device's location. Requires a client ID to function.
@@ -65,13 +67,6 @@ public class RequestButton extends UberButton {
         mRideParameters = rideParameters;
     }
 
-    /**
-     * Sets the client ID that is used to power the ride request.
-     */
-    public void setClientId(@NonNull String clientId) {
-        this.mClientId = clientId;
-    }
-
     @Override
     protected void init(
             @NonNull Context context,
@@ -82,7 +77,7 @@ public class RequestButton extends UberButton {
         if (attributeSet != null) {
             TypedArray typedArray = context.getTheme().obtainStyledAttributes(attributeSet,
                     R.styleable.RequestButton, 0, 0);
-            mClientId = typedArray.getString(R.styleable.RequestButton_client_id);
+            mClientId = ManifestUtils.getManifestData(context, "UberClientId");
             style = Style.fromInt(typedArray.getInt(R.styleable.RequestButton_style,
                     Style.DEFAULT.getValue()));
             typedArray.recycle();
@@ -100,7 +95,6 @@ public class RequestButton extends UberButton {
                 }
 
                 RequestDeeplink requestDeeplink = new RequestDeeplink.Builder()
-                        .setClientId(mClientId)
                         .setRideParameters(mRideParameters)
                         .setUserAgent(USER_AGENT_BUTTON)
                         .build();

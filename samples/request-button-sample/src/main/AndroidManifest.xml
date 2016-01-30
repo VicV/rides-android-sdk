@@ -54,7 +54,6 @@
 
         </activity>
 
-
         <meta-data
             android:name="UberClientId"
             android:value="@string/uber_client_id" />
